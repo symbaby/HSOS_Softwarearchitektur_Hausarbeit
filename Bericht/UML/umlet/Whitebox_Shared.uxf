@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>203</x>
+      <y>273</y>
+      <w>931</w>
+      <h>588</h>
+    </coordinates>
+    <panel_attributes>shared</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>469</x>
+      <y>56</y>
+      <w>336</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>gateway</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>637</x>
+      <y>189</y>
+      <w>49</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>224</x>
+      <y>336</y>
+      <w>483</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>DTOConverter
+-
++toUserWithLinkDTO(trainer:Trainer):TrainerWithLinkDTO
++toTrainerFullDTO(trainer:Trainer):TrainerFullDTO
++toObtainedPokemonDTO(obtainedPokemon:List&lt;ObtainedPokemon&gt;):List&lt;ObtainedPokemonDTO&gt;
++toPokemonWithLinkDTO(obtainedPokemon:ObtainedPokemon):PokemonWithLinkDTO
++toPokemonWithLinkDTO(pokemon:Pokemon):PokemonWithLinkDTO
++toPokemonExistDTO(obtainedPokemon:ObtainedPokemon):PokemonExistsDTO
++toPokemonFullDTO(pokemon:Pokemon):PokemonFullDTO
++toPokemonTypeDTO(pokemonType:PokemonType):PokemonTypeDTO
++toObtainedPokemonWithLinkDTO(obtainedPokemon:ObtainedPokemon):ObtainedPokemonWithLinkDTO
++toBoosterPackDTO(boosterpack:BoosterPackDTO):BoosterPackDTO
++toTradeReturnDTO(trade:Trade):TradeReturnDTO
++toTradeWithLinkDTO(trade:Trade):TradeWithLinkDTO</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>217</x>
+      <y>308</y>
+      <w>511</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>converter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>805</x>
+      <y>315</y>
+      <w>308</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>dto</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>406</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;converts&gt;&gt;</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>217</x>
+      <y>532</y>
+      <w>511</w>
+      <h>301</h>
+    </coordinates>
+    <panel_attributes>utils</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>224</x>
+      <y>553</y>
+      <w>280</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>interceptor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>231</x>
+      <y>581</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;@Interface&gt;&gt;
+Loggable
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>231</x>
+      <y>623</y>
+      <w>259</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>LoggerInterceptor
+-
++LogMethodInvocation(context:InvocationContext):Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>224</x>
+      <y>693</y>
+      <w>483</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>uri</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>238</x>
+      <y>721</y>
+      <w>399</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>ResourceUriBuilder
+-
++forPokemon(id:Long, uriInfo:UriInfo):URI
++forTrainer(id:Long, uriInfo:UriInfo):URI
++forTrade(id:Long, uriInfo:UriInfo):URI
++createResourceUri(resourceClass:Class&lt;?&gt;, method:String, id:Long, uriInfo:UriInfo):URI
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>805</x>
+      <y>553</y>
+      <w>301</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>ConfigSettings
+-
+_+BOOSTER_PRICE: Long {100}_
+_+BOOSTER_START_RANGE: Long {1}_
+_+BOOSTER_START_RANGE: Long {151}_
+_+MIN_POKEMON: Long {1}_
+_+MAX_POKEMON: Long {151}_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>805</x>
+      <y>651</y>
+      <w>301</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Record&gt;&gt;
+ErrorHandler
+-
++errorMessage:String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,12 @@
+Keycloak einrichten wichtig-> @Authentificated und Rollen übergebn sonst funktionieren die Bearer Token nicht
+Java Streams das erste mal angewendet
+Optional das erste mal angewendet
+Interceptor eingerichtet
+Selflinks
+Richtige Fehlercodes zurückgeben sonst stirbt das frontend
+
+
+CORS ERROR im Frontend abfangen:
+Quarkus Realm -> Clients -> frontend-ionic
+Valid redirect Url setzen : http://localhost:4200/*
+Weborigin setzen: *

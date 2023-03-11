@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>133</x>
+      <y>406</y>
+      <w>1043</w>
+      <h>427</h>
+    </coordinates>
+    <panel_attributes>gateway</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>154</x>
+      <y>609</y>
+      <w>518</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>admin</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>154</x>
+      <y>434</y>
+      <w>518</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>trademarket</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>700</x>
+      <y>630</y>
+      <w>462</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>700</x>
+      <y>434</y>
+      <w>469</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>user</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>644</y>
+      <w>490</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Repository&gt;&gt;
+AdminRepository
+-
++getAllUser:Collection&lt;TrainerWithLinkDTO&gt;
++getUserById(id:Long):Optional&lt;TrainerFullDTO&gt;
++addPokemonToUser(id:Long, pokemons:List&lt;PokemonLightDTO&gt;:Optional&lt;PokemonExistsDTO&gt;)
++deletePokemonFromUser(userId:Long, pokemons:List&lt;PokemonLightDTO&gt;:Optional&lt;PokemonExistsDTO&gt;)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>707</x>
+      <y>658</y>
+      <w>441</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Repository&gt;&gt;
+PokemonRepository
+-
++getPokemonById(pokemonId:Long):Optional&lt;PokemonFullDTO&gt;
++getAllPokemon:Collection&lt;PokemonWithLinkDTO&gt;
++getAllPokemonWithPaging(pageIndex:Integer):Collection&lt;PokemonWithLinkDTO&gt;
++initDB</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>462</y>
+      <w>490</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Repository&gt;&gt;
+TradeRepository
+-
++offerTrade(trainerName:String, dto:PokemonTradeDTO):Optional&lt;TradeReturnDTO&gt;
++showOffers(trainerName:String):Collection&lt;TradeWithLinkDTO&gt;
++showMyOffers(trainerName:String):Collection&lt;TradeWithLinkDTO&gt;
++getTradeOfferById(tradeId:Long):Optional&lt;TradeReturnDTO&gt;
++deleteMyTradeOffer(trainerName:String, tradeId:Long):Optional&lt;TradeReturnDTO&gt;
++completeTransaction(trainerName:String, tradeId:Long):Optional&lt;TradeReturnDTO&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>707</x>
+      <y>462</y>
+      <w>448</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Repository&gt;&gt;
+UserRepository
+-
++getUserData(trainerName:String):Optional&lt;PrincipalDTO&gt;
++getAllPokemon(trainerName:String):Collection&lt;ObtainedPokemonWithLinkDTO&gt;
++getPokemonById(pokemonId:Long,trainerName:String):Optional&lt;PokemonExistDTO&gt;
++getFavoritePokemon(trainerName:String):Optional&lt;PokemonExistDTO&gt;
++setFavoritePokemon(pokemonId:Long, trainerName:String):Optional&lt;PokemonWithLinkDTO&gt;
++removeFavoritePokemon(pokemonId:Long, trainerName:String):Optional&lt;PokemonWithLinkDTO&gt;
++buyBooster(trainerName:String):Optional&lt;BoosterPackDTO&gt;
++obtainFreeBooster(trainerName:String):Optional&lt;BoosterPackDTO&gt;
++registerNewUser(trainerName:String):Optional&lt;TrainerFullDTO&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>504</x>
+      <y>0</y>
+      <w>371</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>entity
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>532</x>
+      <y>28</y>
+      <w>308</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>.catalogue
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>546</x>
+      <y>70</y>
+      <w>133</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IAdminCatalogue
+
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>546</x>
+      <y>154</y>
+      <w>133</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ITradeCatalogue
+
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>686</x>
+      <y>154</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IUserCatalogue
+
+
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>686</x>
+      <y>70</y>
+      <w>126</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IPokemonCatalogue
+
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>560</x>
+      <y>266</y>
+      <w>63</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>pokemon
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>651</x>
+      <y>266</y>
+      <w>63</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>user
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>735</x>
+      <y>266</y>
+      <w>63</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>trademarket
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>63</x>
+      <y>182</y>
+      <w>497</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>690.0;10.0;10.0;10.0;10.0;480.0;150.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>56</x>
+      <y>91</y>
+      <w>504</w>
+      <h>644</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>700.0;10.0;10.0;10.0;10.0;900.0;160.0;900.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>805</x>
+      <y>182</y>
+      <w>434</w>
+      <h>371</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;600.0;10.0;600.0;510.0;500.0;510.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>805</x>
+      <y>91</y>
+      <w>441</w>
+      <h>644</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;610.0;10.0;610.0;900.0;490.0;900.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>553</x>
+      <y>875</y>
+      <w>259</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>shared</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>560</x>
+      <y>917</y>
+      <w>70</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>converter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>644</x>
+      <y>917</y>
+      <w>70</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>dto</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>735</x>
+      <y>917</y>
+      <w>70</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>utils</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>679</x>
+      <y>826</y>
+      <w>49</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>679</x>
+      <y>343</y>
+      <w>70</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;manages&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+</diagram>

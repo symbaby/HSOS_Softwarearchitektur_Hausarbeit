@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>266</x>
+      <y>35</y>
+      <w>1148</w>
+      <h>875</h>
+    </coordinates>
+    <panel_attributes>boundary</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>301</x>
+      <y>455</y>
+      <w>497</w>
+      <h>371</h>
+    </coordinates>
+    <panel_attributes>.trademarket</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>819</x>
+      <y>462</y>
+      <w>511</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>.user</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>819</x>
+      <y>70</y>
+      <w>511</w>
+      <h>371</h>
+    </coordinates>
+    <panel_attributes>.pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>301</x>
+      <y>63</y>
+      <w>497</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes>.admin
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>385</x>
+      <y>133</y>
+      <w>322</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Resource&gt;&gt;
+AdminResource
+-
++getAllUser: Response
++getUserById(id:Long): Response
++addPokemonToUserById(id:Long, pokemons:List&lt;DTO&gt;)
++deletePokemonFromUserById(id:Long, pokemons:List&lt;DTO&gt;)
+-
+&lt;&lt;Fallback Methoden&gt;&gt;
+...
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>329</x>
+      <y>287</y>
+      <w>462</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IAdminManagement
+-
++getAllUser:Collection&lt;TrainerWithLinkDTO&gt;
++getUserById(id:Long):Optional&lt;TrainerFullDTO&gt;
++addPokemonToUser(id:Long,List&lt;PokemonLightDTO&gt;):Optional&lt;PokemonExistDTO&gt;
++deletePokemonFromUser(userId:Long, List&lt;PokemonLightDTO&gt;):Optional&lt;PokemonExistDTO&gt;
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>140</y>
+      <w>259</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Resource&gt;&gt;
+PokemonResource
+-
++getAllPokemon:Response
++getAllPokemonWithPaging:Response
++getPokemonById(pokemonId:Long):Response
++initDB:Response
+-
+&lt;&lt;Fallback Methoden&gt;&gt;
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>875</x>
+      <y>287</y>
+      <w>371</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IPokemonManagement
+-
++getPokemonById(pokemonId:Long):Optional&lt;PokemonFullDTO&gt;
++getAllPokemon:Collection&lt;PokemonWithLinkDTO&gt;
++getAllPokemonWithPaging(pageIndex:Integer):Collection&lt;PokemonWithLinkDTO&gt;
++initDB
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>504</y>
+      <w>259</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Resource&gt;&gt;
+TradeResource
+-
++offerTrade(dto: PokemonTradeDTO):Response
++getAllTradeOffer:Response
++getMyTradeOffer:Response
++getTradeOfferById(tradeId:Long):Response
++deleteMyTradeOffer(tradeId:Long):Response
++completeTransaction(tradeId:Long):Response
+-
+&lt;&lt;Fallback Methoden&gt;&gt;
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>329</x>
+      <y>651</y>
+      <w>448</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ITradeManagement
+-
++offerTrade(trainerName:String, dto:PokemonTradeDTO):Optional&lt;TradeReturnDTO&gt;
++showOffers(trainerName:String):Collection&lt;TradeWithLinkDTO&gt;
++showMyOffers(trainerName:String):Collection&lt;TradeWithLinkDTO&gt;
++getTradeOfferById(tradeId:Long):Optional&lt;TradeReturnDTO&gt;
++deleteTradeOfferById(tradeId:Long):Optional&lt;TradeReturnDTO&gt;
++completeTransaction(trainerName:String, tradeId:Long):Optional&lt;TradeReturnDTO&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>861</x>
+      <y>490</y>
+      <w>371</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Resource&gt;&gt;
+UserResource
+-
++userData:Response
++getAllPokemon:Response
++getPokemonById:Response
++getFavoritePokemon:Response
++setFavoritePokemon(pokemonId:Long):Response
++removeFromFavorites(pokemonId:Long):Response
++obtainFreeBooster:Response
++buyBooster:Response
++createNewUser:Response
+-
+&lt;&lt;Fallback Methoden&gt;&gt;
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>861</x>
+      <y>672</y>
+      <w>455</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IUsermanagement
+-
++getUserData(trainerName:String):Optional&lt;PrincipalDTO&gt;
++getAllPokemon(trainername:String):Collection&lt;ObtainedPokemonWithLinkDTO&gt;
++getPokemonById(pokemonId:Long, trainerName:String):Optional&lt;PokemonExistDTO&gt;
++getFavoritePokemon(trainerName:String):Collection&lt;PokemonWithLinkDTO&gt;
++setFavoritePokemon(pokemonId:Long, trainerName:String):Optional&lt;PokemonWithLinkDTO&gt;
++removeFavoritePokemon(pokemonId:Long, trainerName:String):Optional&lt;PokemonWithLinkDTO&gt;
++buyBooster(trainerName:String):Optional&lt;BoosterPackDTO&gt;
++obtainFreeBooster(trainerName:String):Optional&lt;BoosterPackDTO&gt;
++registerNewUser(trainerName:String):Optional&lt;TrainerFullDTO&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>231</y>
+      <w>21</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1071</x>
+      <y>238</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>623</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1036</x>
+      <y>644</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+</diagram>
